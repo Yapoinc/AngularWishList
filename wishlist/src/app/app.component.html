@@ -1,13 +1,49 @@
-<div class="container">
+<!-- Option 1 -->
+<!-- <div class="container">
+  <div *ngIf="!items.length">There is no wishes to display !</div>
   <div>
-    <ul class="wish_list">
-      <li *ngFor='let item of items'>
+    <ul *ngIf="items.length" class="wish_list">
+      <li *ngFor="let item of items">
         <div class="form-check">
           <label class="form-check-label">
-            <input type="checkbox" class="checkbox"> {{item.wishText}} 
+            <input type="checkbox" class="checkbox" /> {{ item.wishText }}
           </label>
-        </div>       
+        </div>
       </li>
-    </ul>   
+    </ul>
   </div>
+</div> -->
+
+<!-- Option 2 -->
+<!-- <div class="container">
+  <div *ngIf="!items.length; then noItems; else showItems"></div>
+  <ng-template #noItems> There is no wishes to display ! </ng-template>
+  <ng-template #showItems>
+    <ul *ngIf="items.length" class="wish_list">
+      <li *ngFor="let item of items">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="checkbox" /> {{ item.wishText }}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+</div> -->
+
+
+<!-- Option 3 -->
+<div class="container">
+  <div *ngIf="!items.length;  else showItems">There is no wishes to display !</div>
+  <ng-template #showItems>
+    <ul *ngIf="items.length" class="wish_list">
+      <li *ngFor="let item of items">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="checkbox" /> {{ item.wishText }}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
 </div>
