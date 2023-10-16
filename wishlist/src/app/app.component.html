@@ -1,0 +1,13 @@
+<div class="container">
+  <div>
+    <ul class="wish_list">
+      <li *ngFor='let item of items'>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="checkbox"> {{item.wishText}} 
+          </label>
+        </div>       
+      </li>
+    </ul>   
+  </div>
+</div>
