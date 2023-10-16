@@ -12,6 +12,7 @@
              attr.data-index="{{ii}}"
              [attr.data-item-index]="ii"
              [checked]="item.isComplete"
+             (click)="toggleItem($event,item)"
               /> 
              {{ item.wishText }}
           </label>
