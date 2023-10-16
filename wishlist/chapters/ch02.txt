@@ -1,0 +1,9 @@
+00:01:52 2.1 Installing and Using the Angular CLI
+00:15:22 2.2 Creating a Data Model
+00:22:46 2.3 Iterating Arrays
+00:30:13 2.4 Making Decisions
+00:41:46 2.5 Binding Data to Properties and Attributes
+00:47:54 2.6 Binding Events
+00:54:58 2.7 Using ngModel to Bind Values to Form Controls
+01:05:02 2.8 Listening for Changes to ngModel Values
+01:12:43 2.9 Using Getters to Filter and Provide Data
