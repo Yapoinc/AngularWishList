@@ -1,4 +1,5 @@
 <div class="container">
+  <h1 class="text-center text-primary">{{title}}</h1>
   <form class="row mt-3 gx-3 gy-2 alingn-items-center justify-content-center">
     <div class="col-sm-6">
       <label class="visually-hidden">Wish</label>
@@ -8,25 +9,23 @@
         class="form-control"
         [(ngModel)]="newWishText"
         (ngModelChange)="textChange($event)"
+        (keypress)="keypressHandler($event)"
       />
     </div>
     <div class="col-auto">
-      <button
-        type="submit"
-        class="btn btn-primary"
-        (click)="$event.preventDefault(); addNewWish()"
-      >
-        Add Wish
+      <button type="submit"
+              class="btn btn-primary"
+              (click)="$event.preventDefault(); addNewWish()"
+              [disabled]="newWishText.trim().length===0">
+        {{locales.AddWish}}
       </button>
     </div>
   </form>
   <div class="row mt-3">
     <div class="col-sm-4">
-      <select class="form-select" [(ngModel)]="listFilter"
-      (ngModelChange)="filterChange($event)">
-        <option value="0">All</option>
-        <option value="1">Unfulfilled</option>
-        <option value="2">Fulfilled</option>
+      <select class="form-select" [(ngModel)]="listFilter">
+        <option *ngFor="let item of filterOptions;index as index"
+                id="listFilter{{index}}" value="{{item.id}}">{{item.description}}</option>
       </select>
     </div>
   </div>
