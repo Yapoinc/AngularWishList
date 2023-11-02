@@ -40,9 +40,7 @@ export class AppComponent {
   textChange(e: string) {
     //console.log(e);
   }
-  toggleItem(e: Event, item: WishItem) {
-    item.isComplete = !item.isComplete;
-  }
+
 
   keypressHandler(e:KeyboardEvent) {
    
