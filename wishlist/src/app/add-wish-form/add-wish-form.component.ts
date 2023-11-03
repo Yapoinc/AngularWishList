@@ -21,6 +21,9 @@ addNewWish=()=> {
 }
 textChange(e: string) {
   //console.log(this.theInput.nativeElement.id);
+  
+  let p1 = this.theInput.nativeElement as HTMLInputElement;
+
 }
 inputChange(e:Event) {
 // console.log(e);
