@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
 import { Locales } from '../Tools/locales'
 import { filterType } from 'src/shared/types/filtertype';
+import { HandyData } from 'src/shared/data/handyData';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,10 +27,10 @@ throw new Error('Method not implemented.');
   listFilter: string = '0';
   newWishText = '';
   title = 'Wish List';
-  filter!:filterType;
-
+  filter:filterType=HandyData.filtersCallbacs[0];
   get visibleitems() {
-     return this.items.filter(this.filter);
+   
+     return this.items.filter(this.filter as filterType);
    }
   addWish = (wishItem: WishItem) => {
     this.items.push(wishItem);

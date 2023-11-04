@@ -1,5 +1,5 @@
 <div class="col-sm-4">
-    <select class="form-select" [(ngModel)]="listFilter" (ngModelChange)="changeFilterHandler($event)">
+    <select class="form-select" [(ngModel)]="listFilter" (ngModelChange)="updateFilter($event)">
       <option *ngFor="let item of filterOptions;index as index"
               id="listFilter{{index}}" value="{{item.id}}">{{item.description}}</option>
     </select>
