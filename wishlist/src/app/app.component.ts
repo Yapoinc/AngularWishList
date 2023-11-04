@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
 import { Locales } from '../Tools/locales'
-let filters = [(x: WishItem) => true, (x: WishItem) => !x.isComplete, (x: WishItem) => x.isComplete];
+import { filterType } from 'src/shared/types/filtertype';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+filterItems($event: filterType) {
+throw new Error('Method not implemented.');
+}
   constructor() {
    
   }
-  filterOptions = [{ id: 0, description: 'All' }, { id: 1, description: 'Unfulfilled' }, { id: 2, description: 'Fulfilled' },];
   locales = Locales;
-  private items: WishItem[] = [
+  items: WishItem[] = [
     new WishItem('Learn Angular'),
     new WishItem('Get coffee', true),
     new WishItem('Find grass that cut itself'),
@@ -24,11 +26,11 @@ export class AppComponent {
   listFilter: string = '0';
   newWishText = '';
   title = 'Wish List';
+  filter!:filterType;
 
-
-  get visibleItems() {
-    return this.items.filter(filters[+this.listFilter]);
-  }
+  get visibleitems() {
+     return this.items.filter(this.filter);
+   }
   addWish = (wishItem: WishItem) => {
     this.items.push(wishItem);
   }
