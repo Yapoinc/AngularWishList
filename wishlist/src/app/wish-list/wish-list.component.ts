@@ -12,8 +12,6 @@ export class WishListComponent implements OnInit {
   }
   @Input() whishList:WishItem[]=[];
 
-  toggleItem(e: Event, item: WishItem) {
-    item.isComplete = !item.isComplete;
-  }
+
 
 }
