@@ -16,7 +16,7 @@ newWishText='';
 addNewWish=()=> {
   if (!this.newWishText.trim())
     return;
-  this.addWishEmiter.emit(new WishItem(this.newWishText))
+  this.addWishEmiter.emit(new WishItem(Date.now(),this.newWishText))
   this.newWishText = '';
 }
 textChange(e: string) {

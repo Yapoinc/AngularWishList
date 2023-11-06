@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { WishItem } from 'src/shared/models/wishItem';
+import events from './../../../shared/services/EventService';
 @Component({
   selector: 'app-wish-list-item',
   templateUrl: './wish-list-item.component.html',
@@ -9,6 +10,7 @@ export class WishListItemComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  @Input() wish!:WishItem;
   @Input() wishText!: string;
   @Input() fullfilled!: boolean;
   @Output() fullfilledChange = new EventEmitter<boolean>();
@@ -28,4 +30,6 @@ export class WishListItemComponent implements OnInit {
     }
     return result;
   }
+  removeWish=()=>events.emit('removeWish',this.wish);
+  
 }

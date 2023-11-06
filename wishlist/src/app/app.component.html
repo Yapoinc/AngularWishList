@@ -5,7 +5,9 @@
    <app-wish-filter [(filterCb)]="filter"/>
   </div>
   <div class="row mt-3">
-    <!-- <app-wish-list [whishList]="visibleitems" /> -->
-    <app-wish-list [whishList]="items.filter(filter)" />
+    <div class="col-sm-4">
+      <!-- <app-wish-list [whishList]="visibleitems" /> -->
+      <app-wish-list [whishList]="items.filter(filter)" />
+    </div>
   </div>
 </div>

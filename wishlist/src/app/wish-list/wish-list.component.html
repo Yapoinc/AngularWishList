@@ -7,6 +7,7 @@
       *ngFor="let wish of whishList"
       [wishText]="wish.wishText"
       [(fullfilled)]="wish.fullfilled"
+      [wish]="wish"
       />
     </ul>
   </ng-template>

@@ -13,12 +13,12 @@ export class HandyData {
 
     public static get wishList(): WishItem[] {
         return [
-            new WishItem('Learn Angular'),
-            new WishItem('Get coffee', true),
-            new WishItem('Find grass that cut itself'),
-            new WishItem('Run 3 times a week'),
-            new WishItem('Sleep more'),
-            new WishItem('Take vacations', true),
+            new WishItem(1,'Learn Angular'),
+            new WishItem(2,'Get coffee', true),
+            new WishItem(3,'Find grass that cut itself'),
+            new WishItem(4,'Run 3 times a week'),
+            new WishItem(5,'Sleep more'),
+            new WishItem(6,'Take vacations', true),
         ]
     }
 
