@@ -5,7 +5,8 @@ import { Locales } from '../Tools/locales'
 import { filterType } from 'src/shared/types/filtertype';
 import { HandyData } from 'src/shared/data/handyData';
 import events from './../shared/services/EventService';
-import { Observable, fromEvent, interval, map, throttleTime, filter} from 'rxjs';
+import { Observable, fromEvent, interval, map, } from 'rxjs';
+import {scan,filter,throttleTime,} from  'rxjs/operators';
 
 @Component({
   selector: 'app-root',
